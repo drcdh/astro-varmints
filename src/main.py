@@ -28,7 +28,7 @@ sense.set_imu_config(True, True, True)
 
 def play_game():
     logger.info("Instantiating game")
-    G = game.Game(sense.set_pixel, sense.clear)
+    G = game.Game(sense.set_pixel, sense.clear, sense.show_message)
     logger.info("Setting joystick callbacks")
 
     def event_check(event):

@@ -74,7 +74,7 @@ class Player:
             x + delta_x < LEFT
             or x + delta_x > RIGHT
             or y + delta_y < TOP
-            or y > BOTTOM + delta_y
+            or y + delta_y > BOTTOM
         ):
             self.logger.debug("Player can't move forward")
         else:
@@ -110,13 +110,14 @@ class Player:
 
 
 class Game:
-    def __init__(self, set_pixel_fn, clear_fn):
+    def __init__(self, set_pixel_fn, clear_fn, show_msg_fn):
         self.logger = logging.getLogger(f"game_app.game.{__name__}.Game")
         self.logger.debug("Creating Game instance")
         self._set_pixel_fn = set_pixel_fn
         self._clear_fn = clear_fn
+        self._show_msg_fn = show_msg_fn
         self._baddies = []
-        self._player = Player(LEFT, BOTTOM, D.UP)
+        self._player = Player(DIM // 2, DIM // 2, D.UP)
         self._time_since_new_baddy = 0
         self._time_played = 0
 
@@ -132,7 +133,16 @@ class Game:
             pass
         finally:
             self.logger.info("Game over or something!")
-            time.sleep(5)
+            time.sleep(3)
+            self._clear_fn()
+            self._show_msg_fn(
+                f"# Baddies: {len(self._baddies)}; "
+                f"Time played: {int(self._time_played)} seconds",
+                scroll_speed=0.1,
+                text_colour=(198, 30, 74),
+                back_colour=(20, 25, 155),
+            )
+            time.sleep(1)
             self._clear_fn()
 
     def _run(self):
