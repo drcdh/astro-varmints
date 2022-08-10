@@ -10,7 +10,7 @@ logger = logging.getLogger(f"{APP_NAME}.{__name__}")
 
 class Game:
     def __init__(self, set_pixel_fn, clear_fn, show_msg_fn):
-        self.logger = logging.getLogger(f"{APP_NAME}.{__name__}.{self.__class__}")
+        self.logger = logging.getLogger(f"{APP_NAME}.{__name__}.{self.__class__.__name__}")
         self.logger.debug("Creating Game instance")
         self._set_pixel_fn = set_pixel_fn
         self._clear_fn = clear_fn
@@ -34,8 +34,10 @@ class Game:
             self.logger.info("Game over or something!")
             time.sleep(3)
             self._clear_fn()
+            score_msg = f"Score: {len(self._baddies)}, " f"Time: {int(self._time_played)} "
+            self.logger.info(score_msg)
             self._show_msg_fn(
-                f"Score: {len(self._baddies)}, " f"Time: {int(self._time_played)} ",
+                score_msg,
                 scroll_speed=0.1,
                 text_colour=(100, 30, 40),
                 back_colour=(0, 5, 5),

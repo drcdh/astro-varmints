@@ -8,7 +8,7 @@ from .game import Direction
 from .game.common import APP_NAME
 
 logger = logging.getLogger(f"{APP_NAME}")
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 fh = logging.FileHandler(f"{APP_NAME}.log")
 fh.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()

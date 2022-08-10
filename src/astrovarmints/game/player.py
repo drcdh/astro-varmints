@@ -7,7 +7,7 @@ class Player:
     _INIT_COLOR = (150, 150, 150)
 
     def __init__(self, x=DIM // 2, y=BOTTOM - 1, d=D.UP):
-        self.logger = logging.getLogger(f"{APP_NAME}.{__name__}.{self.__class__}")
+        self.logger = logging.getLogger(f"{APP_NAME}.{__name__}.{self.__class__.__name__}")
         self.logger.debug("Creating Player instance")
         self.x = x
         self.y = y

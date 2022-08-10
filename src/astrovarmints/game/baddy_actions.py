@@ -7,7 +7,6 @@ logger = logging.getLogger(f"{APP_NAME}.{__name__}")
 
 def _move(baddy, d):
     logger.debug(f"{baddy} moving {d}")
-    print(f"{baddy} moving {d}")
     baddy.x, baddy.y = stay_onscreen(*adjacent_pixel(baddy.x, baddy.y, d))
 
 

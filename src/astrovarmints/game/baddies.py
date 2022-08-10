@@ -11,7 +11,7 @@ class Baddy:
 
     def __init__(self, x, y, id_="anon"):
         self.logger = logging.getLogger(
-            f"{APP_NAME}.{__name__}.{self.__class__}[{id_}]"
+            f"{APP_NAME}.{__name__}.{self.__class__.__name__}[{id_}]"
         )
         self.logger.debug(f'Creating Baddy instance "{id_}"')
         self.x = x
