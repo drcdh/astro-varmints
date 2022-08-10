@@ -1,13 +1,11 @@
-#!/usr/bin/python3.7
-
 import logging
 from time import sleep
 
 import sense_hat as SH
 
-import game
-from game import Direction
-from game.common import APP_NAME
+from . import game
+from .game import Direction
+from .game.common import APP_NAME
 
 logger = logging.getLogger(f"{APP_NAME}")
 logger.setLevel(logging.DEBUG)
