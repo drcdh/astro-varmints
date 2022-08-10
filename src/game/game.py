@@ -136,11 +136,11 @@ class Game:
             time.sleep(3)
             self._clear_fn()
             self._show_msg_fn(
-                f"# Baddies: {len(self._baddies)}; "
-                f"Time played: {int(self._time_played)} seconds",
+                f"Score: {len(self._baddies)}, "
+                f"Time: {int(self._time_played)} ",
                 scroll_speed=0.1,
-                text_colour=(198, 30, 74),
-                back_colour=(20, 25, 155),
+                text_colour=(100, 30, 40),
+                back_colour=(0, 5, 5),
             )
             time.sleep(1)
             self._clear_fn()
