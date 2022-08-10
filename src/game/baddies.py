@@ -1,14 +1,18 @@
+import logging
 import random
 import time
 
 from . import baddy_actions
 from .common import *
 
+
 class Baddy:
     _COLOR = (100, 10, 10)
 
     def __init__(self, x, y, id_="anon"):
-        self.logger = logging.getLogger(f"{APP_NAME}.{__name__}.{self.__class__}[{id_}]")
+        self.logger = logging.getLogger(
+            f"{APP_NAME}.{__name__}.{self.__class__}[{id_}]"
+        )
         self.logger.debug(f'Creating Baddy instance "{id_}"')
         self.x = x
         self.y = y

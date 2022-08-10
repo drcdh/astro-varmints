@@ -1,10 +1,9 @@
+import logging
 import random
 import time
 
-from . import baddies
-from . import player
+from . import baddies, player
 from .common import *
-
 
 logger = logging.getLogger(f"{APP_NAME}.{__name__}")
 
@@ -36,8 +35,7 @@ class Game:
             time.sleep(3)
             self._clear_fn()
             self._show_msg_fn(
-                f"Score: {len(self._baddies)}, "
-                f"Time: {int(self._time_played)} ",
+                f"Score: {len(self._baddies)}, " f"Time: {int(self._time_played)} ",
                 scroll_speed=0.1,
                 text_colour=(100, 30, 40),
                 back_colour=(0, 5, 5),

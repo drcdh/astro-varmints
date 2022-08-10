@@ -1,4 +1,7 @@
+import logging
+
 from .common import *
+
 
 class Player:
     _INIT_COLOR = (150, 150, 150)
@@ -98,4 +101,3 @@ class Player:
             self.point(d)
         else:
             self.move_forward()
-

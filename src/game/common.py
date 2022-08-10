@@ -1,5 +1,4 @@
-import enum
-import logging
+import enum as _enum
 
 APP_NAME = "astro-varmints"
 
@@ -22,7 +21,7 @@ assert (
 ), f"Why are there {len(EDGE_PIXELS)} edge pixels??"
 
 
-class Direction(enum.Enum):
+class Direction(_enum.Enum):
     UP = 0
     LEFT = 1
     DOWN = 2
