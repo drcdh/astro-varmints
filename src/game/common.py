@@ -1,4 +1,7 @@
 import enum
+import logging
+
+APP_NAME = "astro-varmints"
 
 DIM = 8
 # x

@@ -1,8 +1,6 @@
-import logging
-
 from .common import *
 
-logger = logging.getLogger("game_app.game.baddy_actions")
+logger = logging.getLogger(f"{APP_NAME}.{__name__}")
 
 
 def _move(baddy, d):

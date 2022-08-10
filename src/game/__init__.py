@@ -1,2 +1,2 @@
 from .common import Direction
-from .game import Game, Player
+from .game import Game

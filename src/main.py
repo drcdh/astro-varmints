@@ -7,10 +7,11 @@ import sense_hat as SH
 
 import game
 from game import Direction
+from game.common import APP_NAME
 
-logger = logging.getLogger("game_app")
+logger = logging.getLogger(f"{APP_NAME}")
 logger.setLevel(logging.DEBUG)
-fh = logging.FileHandler("game.log")
+fh = logging.FileHandler(f"{APP_NAME}.log")
 fh.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
 ch.setLevel(logging.ERROR)
@@ -42,6 +43,7 @@ def play_game():
     sense.stick.direction_middle = G.get_callback(event_check)
     logger.info("Running game")
     G.run()
+    logger.info("Game over, as in the program is finished")
 
 
 if __name__ == "__main__":
