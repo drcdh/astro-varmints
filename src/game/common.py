@@ -1,6 +1,6 @@
 import enum as _enum
 
-APP_NAME = "astro-varmints"
+APP_NAME = "astrovarmints"
 
 DIM = 8
 # x
