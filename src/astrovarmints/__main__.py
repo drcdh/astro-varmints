@@ -20,7 +20,7 @@ logger.addHandler(fh)
 logger.addHandler(ch)
 
 logger.info("Instantiating SenseHat")
-sense = SH.SenseHat()
+sense = SH.SenseHat()  # This will be overwritten if we use sense_emu
 logger.info("set_imu_config")
 sense.set_imu_config(True, True, True)
 
@@ -45,4 +45,8 @@ def play_game():
 
 
 if __name__ == "__main__":
+    from sys import argv
+    if len(argv) > 1 and argv[1] == "emu":
+        import sense_emu as SE
+        sense = SE.SenseHat()
     play_game()
