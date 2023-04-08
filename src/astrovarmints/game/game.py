@@ -84,7 +84,6 @@ class Game:
 
     def _check_end_condition(self):
         for baddy in self._baddies:
-            # breakpoint()
             overlap = get_overlap([(baddy.x, baddy.y)], self._player.pixels)
             if overlap:
                 self.logger.debug(f"{baddy} overlaps with Player at {overlap}")
